@@ -1,4 +1,4 @@
-package id.indrasudirman.mymvvmnewapp.ui
+package id.indrasudirman.mymvvmnewapp.models
 
 data class Source(
     val id: Any,

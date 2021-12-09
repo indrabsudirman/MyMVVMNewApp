@@ -2,7 +2,7 @@ package id.indrasudirman.mymvvmnewapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import id.indrasudirman.mymvvmnewapp.ui.Article
+import id.indrasudirman.mymvvmnewapp.models.Article
 
 @Dao
 interface ArticleDAO {

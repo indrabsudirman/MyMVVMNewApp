@@ -1,6 +1,6 @@
 package id.indrasudirman.mymvvmnewapp.api
 
-import id.indrasudirman.mymvvmnewapp.ui.NewsResponse
+import id.indrasudirman.mymvvmnewapp.models.NewsResponse
 import id.indrasudirman.mymvvmnewapp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

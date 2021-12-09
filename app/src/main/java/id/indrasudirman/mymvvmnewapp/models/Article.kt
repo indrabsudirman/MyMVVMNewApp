@@ -1,4 +1,4 @@
-package id.indrasudirman.mymvvmnewapp.ui
+package id.indrasudirman.mymvvmnewapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
