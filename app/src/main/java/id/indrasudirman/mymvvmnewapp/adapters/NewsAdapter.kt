@@ -15,7 +15,7 @@ import id.indrasudirman.mymvvmnewapp.models.Article
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
-    inner class ArticleViewHolder(itemArticlePreviewBinding: ItemArticlePreviewBinding): RecyclerView.ViewHolder(itemArticlePreviewBinding.root)
+    inner class ArticleViewHolder(val itemArticlePreviewBinding: ItemArticlePreviewBinding): RecyclerView.ViewHolder(itemArticlePreviewBinding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -39,18 +39,39 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     }
 
+    override fun getItemCount(): Int {
+        return differ.currentList.size
+    }
+
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
+//        val itemArticlePreviewBinding: ItemArticlePreviewBinding
         val article = differ.currentList[position]
 
 //        holder.itemView.app
 
-//        holder.itemView.apply {
-//
-//            Glide.with(this).load(article.urlToImage).into(itemArticlePreviewBinding.iv) //name view
-//        }
+        holder.itemView.apply {
+
+            //Video 6
+
+//            Glide.with(this).load(article.urlToImage).into() //name view
+            Glide.with(this).load(article.urlToImage).into(holder.itemArticlePreviewBinding.ivArticleImage)
+            holder.itemArticlePreviewBinding.tvSource.text = article.source.name
+            holder.itemArticlePreviewBinding.tvTitle.text = article.title
+            holder.itemArticlePreviewBinding.tvDescription.text = article.description
+            holder.itemArticlePreviewBinding.tvPublishedAt.text = article.publishedAt
+
+            setOnItemClickListener {
+                onItemClickListener?.let { it(article) }
+            }
+
+        }
     }
 
-    override fun getItemCount(): Int {
-        return differ.currentList.size
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+    private fun setOnItemClickListener (listener: (Article) -> Unit) {
+        onItemClickListener = listener
     }
+
+
 }
