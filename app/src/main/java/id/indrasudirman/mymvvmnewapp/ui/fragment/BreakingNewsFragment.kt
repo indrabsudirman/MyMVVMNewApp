@@ -35,6 +35,8 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
         viewModel = (activity as NewsActivity).viewModel
 
+        fragmentBreakingNewsBinding = FragmentBreakingNewsBinding.bind(view)
+
         setupRecyclerView()
 
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
