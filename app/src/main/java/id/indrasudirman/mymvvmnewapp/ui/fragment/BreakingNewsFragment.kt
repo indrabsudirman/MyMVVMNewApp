@@ -14,6 +14,7 @@ import id.indrasudirman.mymvvmnewapp.R
 import id.indrasudirman.mymvvmnewapp.adapters.NewsAdapter
 import id.indrasudirman.mymvvmnewapp.databinding.ActivityNewsBinding.inflate
 import id.indrasudirman.mymvvmnewapp.databinding.FragmentBreakingNewsBinding
+import id.indrasudirman.mymvvmnewapp.models.Article
 import id.indrasudirman.mymvvmnewapp.ui.NewsActivity
 import id.indrasudirman.mymvvmnewapp.ui.NewsViewModel
 import id.indrasudirman.mymvvmnewapp.util.Resource
@@ -26,9 +27,6 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
     private lateinit var fragmentBreakingNewsBinding: FragmentBreakingNewsBinding
 
     val TAG = "BreakingNewsFragment"
-
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
