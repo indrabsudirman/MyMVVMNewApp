@@ -63,6 +63,10 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
 
         }
+        // Lama mentog disini, sampe 2 hari full (pada saat guru bagi rapor)
+        // solusinya, harus dari buat lagi holder.itemArticlePreviewBinding.root.setOnClickListener
+        // diluar holder.itemView.apply di atas, karena ini sudah bukan view, ViewBinding
+        // berhasil ketemu dari baca-baca comment di Youtube.
         holder.itemArticlePreviewBinding.root.setOnClickListener {
             onItemClickListener?.let { it(article) }
         }
