@@ -56,7 +56,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
 //            Glide.with(this).load(article.urlToImage).into() //name view
             Glide.with(this).load(article.urlToImage).into(ivArticleImage)
-            holder.itemArticlePreviewBinding.tvSource.text = article.source.name
+            holder.itemArticlePreviewBinding.tvSource.text = article.source?.name
             holder.itemArticlePreviewBinding.tvTitle.text = article.title
             holder.itemArticlePreviewBinding.tvDescription.text = article.description
             holder.itemArticlePreviewBinding.tvPublishedAt.text = article.publishedAt
